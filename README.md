@@ -33,11 +33,15 @@ You can get this by typing the following into your terminal ("Terminal" in mac/l
 
 If you get a permission error then try ` sudo docker pull joshuarchristie/statistical-rethinking:r` and enter your password when prompted.
 
-You can then run a `container` (a specific instance of the `image` you downloaded) by typing into the terminal:
+You can then run a `container` (a specific instance of the `image` you downloaded) by typing into the terminal (if mac/linux):
 
 `docker run --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work joshuarchristie/statistical-rethinking:r`
 
-and then click on the underlined link down the bottom that says something like "or http://127.0.0.1:8888/...". (again use `sudo` if you have permission issues).
+or if on windows:
+
+`docker run --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v ${pwd}:/home/jovyan/work joshuarchristie/statistical-rethinking:r`
+
+and then click on (or copy and paste) the underlined link down the bottom that says something like "or http://127.0.0.1:8888/...". (again use `sudo` if you have permission issues).
 
 That will launch a jupyter notebook in your default browser where clicking on the `work` directory from within jupyter will show your current working directory 
 (i.e. the directory given if you enter `pwd` in the terminal).
